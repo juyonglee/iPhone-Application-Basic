@@ -156,9 +156,13 @@ Xcode의 View Inspector
             @IBOutlet weak var redView: UIView!
         }
         ```
-- 아웃렛 프로퍼티와 ARC
+- Storyboard에서 ViewController 선택 후 오른쪽 버튼 클릭해서 연결 가능
+- Outlet 프로퍼티와 ARC
     1. 코드로 작성한 Property : strong
         - strong: 화면에서 삭제 -> Property 소유
     2. 인터페이스 빌더로 작성 : weak
         - weak: 화면에서 삭제 ->객체 해제 
-
+- Outlet 연결 오류시 발생하는 메세지
+    ```
+    *** Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<ViewController 0x6aae150> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key imageView.’
+    ```
