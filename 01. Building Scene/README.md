@@ -78,7 +78,8 @@ Xcode의 View Inspector
 1. View 생성
     ```swift
     //  1. 위치와 크기 정보 입력
-    let frame = CGRect(x: 10, y: 10, width: 100, height: 100) let view1 = UIView(frame:frame)
+    let frame = CGRect(x: 10, y: 10, width: 100, height: 100) 
+    let view1 = UIView(frame:frame)
 
     //  2. 뷰 생성 후 frame으로 위치/크기 입력
     let view = UIView()
@@ -134,27 +135,27 @@ Xcode의 View Inspector
         func viewWithTag(_ tag: Int) -> UIView?
         ```
     - recursive, 자식 View까지 검색
-    ```swift
-    override func viewDidAppear(animated: Bool) {
-        if let view99 = self.view.viewWithTag(99) {
-            view99.backgroundColor = UIColor.gray
+        ```swift
+        override func viewDidAppear(animated: Bool) {
+            if let view99 = self.view.viewWithTag(99) {
+                view99.backgroundColor = UIColor.gray
+            }
         }
-    }
-    ```
+        ```
 2. Outlet
 - View와 Code(Property) 연결
 - Property에 @IBOutlet 지시자
 - Outlet 작성 다이얼로그
     - Connection : Outlet 연결 
     - Object : ViewController 
-    - Name : greenView Property
+    - Name : redView Property
     - Type : UIView 타입
     - Storage : Weak (ARC)
-    ```swift
-    class ViewController: UIViewController { 
-        @IBOutlet weak var redView: UIView!
-    }
-    ```
+        ```swift
+        class ViewController: UIViewController { 
+            @IBOutlet weak var redView: UIView!
+        }
+        ```
 - 아웃렛 프로퍼티와 ARC
     1. 코드로 작성한 Property : strong
         - strong: 화면에서 삭제 -> Property 소유
