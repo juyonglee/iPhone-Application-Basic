@@ -163,6 +163,5 @@ Xcode의 View Inspector
     2. 인터페이스 빌더로 작성 : weak
         - weak: 화면에서 삭제 ->객체 해제 
 - Outlet 연결 오류시 발생하는 메세지
-    ```
-    *** Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<ViewController 0x6aae150> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key imageView.’
-    ```
+    
+    `*** Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<ViewController 0x6aae150> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key imageView.’`
