@@ -48,7 +48,7 @@ Content에 적합한 View를 사용
                 - **`0`** 으로 설정하는 경우 크기에 맞춰서 줄을 표현
 
 ### Code로 Label 작성하기
-- **`UILabel Class`**
+- Class: **`UILabel`**
 - UILabel의 Content
     ```swift
     var text: String?
@@ -85,7 +85,7 @@ Content에 적합한 View를 사용
         var numberOfLines: Int
         ```
 2. Font 설정
-    - **`UIFont class`**
+    - Class: **`UIFont`**
         ```swift
         var font: UIFont!
         ```
@@ -112,7 +112,7 @@ Content에 적합한 View를 사용
         ```
 4. Custom Font 
     - [Step01] 원하는 Font file을 Project에 추가한다.
-    - [Step02] plist에 **`Fonts provided by application`**에 Font명을 추가한다.
+    - [Step02] plist에 **`Fonts provided by application`** 에 Font명을 추가한다.
     - [Step03] Font 객체를 생성한다.
         ```swift
         label.font = UIFont(name: "SeoulHangang", size: 25)
