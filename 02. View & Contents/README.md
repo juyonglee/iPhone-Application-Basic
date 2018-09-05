@@ -155,4 +155,61 @@ Content에 적합한 View를 사용
                     - 이미지 Set Group 설정
                 - Launch Image
                 - Data
-                
+
+## ImageView
+### Imageview 속성
+- 두 가지 상태: Normal or Highlighted
+- Content Mode 속성
+    - 이미지의 크기/비율을 설정
+    ```
+    [Example] Scale To fill, Aspect fit, Aspect fill ...
+    ```
+- View Cliping 속성
+    - 영역 밖의 Content 출력
+    - `Clip To bounds 속성 이용` 
+### Code로 Label 작성하기
+- Class: `UIImageView`
+- Content: UIImage
+1. `UIImage` 객체 생성
+    ```swift
+    // 1. Bundle로 배포되는 이미지, 이미지 파일 이름 (png는 확장자 생략 가능)이나 이미지 셋
+    // - init?(named name: String) -> UIImage
+    if let image = UIImage(named: "like_button") { 
+        let imageView = UIImageView(image: image) 
+        self.view.addSubview(imageView)
+    }
+    
+    // 2. 파일 경로로 이미지 객체 생성 - init?(contentsOfFile paht: String)
+    let path = "이미지 경로"
+    let image = UIImage(contentsOfFile: path)
+    
+    // 3. 네트워크, 파일 등에서 이지미 객체 생성 - init?(data: Data)
+    let urlStr = "http://lorempixel.com/400/200/cats/" 
+    if let url = URL(string: urlStr), let data = try? Data(contentsOf: url), let image = UIImage(data:data) { 
+        imageView.image = image
+    }
+    ```
+2. `UIImageView` 객체 생성
+- 객체 생성
+    ```swift
+    init(image: UIImage?)
+    init(image: UIImage?, highlightedImage: UIImage?)
+    ```
+- 이미지 Property
+    ```swift
+    var image:UIImage?
+    var highlightedImage: UIImage?
+    ```
+- 상태 변경하기: isHightlighted
+    ```swift
+    imageView.isHiglighted = true
+    ```
+- Content Mode
+    ```swift
+    var contentMode: UIViewContentMode
+    ```
+- Cliping: 뷰를 벗어나는 부분을 표시안하기
+    ```swift
+    var clipsToBounds: Bool
+    ```
+    
